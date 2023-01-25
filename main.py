@@ -1,10 +1,10 @@
 
 import random 
 from art import logo
-from replit import clear
 
 EASY_LEVEL=10
 HARD_LEVEL=5
+
 
 # Creamos la funcion para comprobar respuesta y suposición
 def check_answer(guess,answer,turns):
@@ -40,19 +40,20 @@ def game():
     turns =check_answer(guess,answer,turns)
     if turns==0:
       print("Has acabado con el numero de intentos")
-      break
+      print("GAME OVER")
+      return
     elif guess !=answer:
       print("Prueba otra vez")
-    
+
 #llamamos a la funcion principal
 game()
 
 #volver a jugar
 regame = input("Quieres volver a jugar. Aprieta 's' para jugar de nuevo:")
-while regame=="s":
-  clear()
+while regame=="s" or "S":
   game()
 
+print("GAME OVER")
 
 
 
